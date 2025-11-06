@@ -54,7 +54,7 @@ Tampilan visual contoh (Light & Dark Mode):
 ---
 
 ## 🚀 Live Demo
-> 🔗 **Demo Langsung (GitHub Pages):** [Klik di sini](https://dhall-afdhal.github.io/ruby_logout_button/) *(jika sudah diaktifkan GitHub Pages)*
+> 🔗 **Demo Langsung (GitHub Pages):** [Klik di sini]([https://dhall-afdhal.github.io/ruby_logout_button/](https://vt.tiktok.com/ZSymqhKnE/) *(jika sudah diaktifkan GitHub Pages)*
 
 ---
 

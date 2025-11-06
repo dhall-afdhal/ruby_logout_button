@@ -1,0 +1,271 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600&display=swap");
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: "Quicksand", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+/* 🌌 Background gambar full (tanpa crop & tidak gelap) */
+body {
+  display: flex;
+  position: relative;
+  color: #f4f7ff;
+  flex-direction: row !important; /* ✅ sejajar horizontal */
+  justify-content: center !important; /* ✅ tengah secara horizontal */
+  align-items: center !important; /* ✅ tengah secara vertikal */
+  gap: 40px; /* jarak antar tombol */
+  height: 100vh; /* ✅ isi penuh tinggi layar */
+  margin: 0; /* hilangkan jarak bawaan browser */
+
+  /* urutan layer: gradasi lembut + gambar */
+  background: linear-gradient(
+      -45deg,
+      rgba(106, 17, 203, 0.25),
+      rgba(37, 117, 252, 0.25),
+      rgba(0, 198, 255, 0.25),
+      rgba(0, 114, 255, 0.25)
+    ),
+    url("/images/background.png") no-repeat center center fixed;
+
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: #000;
+  animation: gradientShift 25s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Efek overlay lembut agar tombol menonjol tapi gambar tetap kelihatan */
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(
+    0,
+    0,
+    0,
+    0.25
+  ); /* transparansi dikurangi agar gambar jelas */
+  backdrop-filter: blur(4px);
+  z-index: 0;
+}
+
+/* ============================================================= */
+/* 🚀 TOMBOL LOGOUT */
+/* ============================================================= */
+.logoutButton {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 16px;
+  color: #f4f7ff;
+  cursor: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  height: 60px;
+  width: 190px;
+  padding-left: 20px;
+  position: relative;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s ease;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.logoutButton:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2),
+    0 0 30px rgba(67, 113, 247, 0.4), 0 0 60px rgba(67, 113, 247, 0.2);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ✨ Efek kilau halus di hover */
+.logoutButton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.5),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.logoutButton:hover::after {
+  opacity: 1;
+}
+
+/* ============================================================= */
+/* 💎 FIGURE (orang + pintu) */
+/* ============================================================= */
+.figure {
+  position: absolute;
+  bottom: 6px;
+  right: 50px;
+  width: 30px;
+  fill: #f7b543;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 0 6px rgba(67, 113, 247, 0.5));
+  z-index: 5;
+}
+
+.door,
+.doorway {
+  position: absolute;
+  bottom: 4px;
+  right: 12px;
+  width: 32px;
+  fill: #f4f7ff;
+  transition: transform 200ms ease;
+  z-index: 4;
+}
+
+.door path {
+  fill: #4371f7;
+  stroke: #4371f7;
+  stroke-width: 4;
+}
+
+.logoutButton:hover .door {
+  transform: rotateY(25deg);
+}
+
+.logoutButton:hover .figure {
+  filter: drop-shadow(0 0 10px rgba(67, 113, 247, 0.8));
+}
+
+/* ============================================================= */
+/* 👣 ANIMASI ORANG BERJALAN KE PINTU (arah kanan) */
+/* ============================================================= */
+.logoutButton.clicked .figure {
+  animation: walkToDoor 1.5s ease-in-out forwards;
+}
+
+.logoutButton.clicked .door {
+  transform: rotateY(50deg);
+  transition: transform 0.6s ease 0.3s;
+}
+
+@keyframes walkToDoor {
+  0% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+  25% {
+    transform: translateX(10px) scale(1.03);
+  }
+  50% {
+    transform: translateX(20px) scale(1.05);
+  }
+  75% {
+    transform: translateX(30px) scale(0.95);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateX(45px) scale(0.8);
+    opacity: 0;
+  }
+}
+
+/* ============================================================= */
+/* 💬 TEKS LOGOUT */
+/* ============================================================= */
+.button-text {
+  position: relative;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  color: #fff;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.logoutButton:hover .button-text {
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+/* ============================================================= */
+/* 📱 RESPONSIVE DESIGN */
+/* ============================================================= */
+@media (max-width: 768px) {
+  .logoutButton {
+    width: 150px;
+    height: 50px;
+    padding-left: 15px;
+  }
+  .figure {
+    width: 25px;
+    right: 35px;
+  }
+  .door,
+  .doorway {
+    width: 25px;
+    right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logoutButton {
+    width: 130px;
+    height: 45px;
+  }
+  .figure {
+    width: 22px;
+  }
+  .button-text {
+    font-size: 13px;
+  }
+}
+
+/* 🌠 Efek bintang halus di background */
+body::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(white 1px, transparent 1px);
+  background-size: 3px 3px;
+  opacity: 0.1;
+  animation: starMove 120s linear infinite;
+  z-index: 0;
+}
+
+@keyframes starMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -1000px 1000px;
+  }
+}
+.copyright {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.5px;
+}
+
+.background {
+  display: flex;
+  align-items: center;
+}

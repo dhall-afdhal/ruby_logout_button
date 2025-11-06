@@ -25,9 +25,10 @@ Fokus utamanya adalah pada **animasi SVG yang halus**, **transisi visual menarik
 ## 🖼️ Preview
 Tampilan visual contoh (Light & Dark Mode):
 
-| Light Mode | Dark Mode |
-|-------------|------------|
-| <img src="preview-light.png" width="350"> | <img src="preview-dark.png" width="350"> |
+| Light Mode & Dark Mode |
+|-------------------------|
+| [<img src="preview-light.png" width="350"> | <img src="preview-dark.png" width="350">](https://github.com/dhall-afdhal/ruby_logout_button/blob/main/public/images/Ui.png
+) |
 
 > ⚙️ Animasi bekerja penuh di browser modern seperti Chrome, Edge, dan Firefox terbaru.
 
@@ -35,3 +36,9 @@ Tampilan visual contoh (Light & Dark Mode):
 1. Clone repositori ini:
    ```bash
    git clone https://github.com/username/animated-logout-button.git
+
+
+   [![Follow on GitHub](https://img.shields.io/github/followers/dhall-afdhal?label=Follow&style=social)](https://github.com/dhall-afdhal)
+
+[© 2020 - 2025 𝘈𝘧𝘥𝘩𝘢𝘭 & 𝘋𝘏𝘈 𝘗𝘳𝘰𝘥𝘶𝘤𝘵𝘪𝘰𝘯 — All rights reserved.](https://github.com/dhall-afdhal)
+

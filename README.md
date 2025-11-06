@@ -15,3 +15,23 @@ Fokus utamanya adalah pada **animasi SVG yang halus**, **transisi visual menarik
 - 🧠 Dapat diintegrasikan ke berbagai framework (React, Vue, Laravel, CodeIgniter, dsb.)
 
 ## 📂 Struktur Proyek
+├── index.html # Struktur utama tombol logout
+├── style.css # Desain & animasi tombol logout
+├── script.js # Script tambahan (opsional)
+├── images/ # Folder aset background (jika digunakan)
+└── README.md # Dokumentasi proyek
+
+
+## 🖼️ Preview
+Tampilan visual contoh (Light & Dark Mode):
+
+| Light Mode | Dark Mode |
+|-------------|------------|
+| <img src="preview-light.png" width="350"> | <img src="preview-dark.png" width="350"> |
+
+> ⚙️ Animasi bekerja penuh di browser modern seperti Chrome, Edge, dan Firefox terbaru.
+
+## 🧑‍💻 Cara Menggunakan
+1. Clone repositori ini:
+   ```bash
+   git clone https://github.com/username/animated-logout-button.git
